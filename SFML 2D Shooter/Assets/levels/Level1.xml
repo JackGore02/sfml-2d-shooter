@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<Level width="16" height="16">
+	<Row>
+		<Tile sprite="floor_desert-0-0.png"/>
+		<Tile sprite="floor_desert-1-0.png"/>
+		<Tile sprite="spr_wall_stage1_static_0-0-0.png"/>
+		<Tile sprite="spr_wall_stage1_static_1-0-0.png"/>
+		<Tile sprite="tileset_desert-0-0.png"/>
+		<Tile sprite="tileset_desert-1-0.png"/>
+		<Tile sprite="tileset_desert-2-0.png"/>
+		<!-- Fill in the rest of the tiles for the first row -->
+		<Tile sprite=""/>
+		<!-- ... -->
+	</Row>
+	<Row>
+		<!-- Fill in tiles for the second row -->
+		<!-- ... -->
+	</Row>
+	<!-- Continue adding rows until you complete the 16x16 level -->
+	<!-- ... -->
+</Level>

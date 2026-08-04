@@ -1,0 +1,2 @@
+This is a group depot for 5210COMP: Software Engineering for Games. This Depot will host the Group Game Application for Part 2b of the Assignment.
+The main files expected to be stored here are the Application and Libraries folders of your Game - you are also permitted to store documentation and Assets, but these will not be counted towards your submission.
