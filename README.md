@@ -6,7 +6,7 @@ The player can move and sprint through the game world, aim with the mouse, switc
 
 ## Project context and my contribution
 
-This was created as a university group-work project by Ash Henry, Brad Beattie, Daniel Devaney, and Jack Gore. The underlying game framework was provided with the assignment and was not created by any member of the group; the game itself and its gameplay features were developed by the project contributors.
+This was created as a university group-work project by Ash Henry, Brad Beattie, Daniel Devaney, and Jack Gore. The underlying game framework was provided with the assignment and was not created by any member of the group.
 
 My specific role was **Player and Weapons Developer**. My work focused on the player character and weapon systems, together with any implementation that directly overlapped with those areas. This includes player movement and animation states, mouse-facing behaviour, sprinting and melee, weapon aiming and switching, ammunition and reloading, projectile creation and movement, combat collisions, scoring interactions, and integration with related input, HUD, collectible, camera, and game-state systems.
 
@@ -25,10 +25,6 @@ The repository is preserved as a record of the collaborative coursework in its s
 - Integration with health, ammunition, and speed collectibles
 - Integration with the player-following camera
 - HUD integration for health, score, equipped weapon, and ammunition
-
-## Project status
-
-This is an archived university prototype rather than a finished commercial game. The application starts at the main menu, from which the player can begin level one, view the controls, or exit. Some debug controls, placeholder content, incomplete behaviours, and coursework-era implementation decisions remain intentionally preserved.
 
 ## Controls
 
@@ -84,28 +80,28 @@ Build output is written beneath `build/Win32/<configuration>`. The game loads it
 SFML 2D Shooter/
 |-- Source/
 |   |-- Engine/
-|   |   |-- Input/                         # Shared input abstractions
-|   |   |-- Physics/                       # Colliders used by combat objects
+|   |   |-- Input/                            # Shared input abstractions
+|   |   |-- Physics/                          # Colliders used by combat objects
 |   |   `-- Renderer/
-|   |       |-- AnimatedSprite.*           # Player, weapon, and bullet animation
-|   |       `-- FrameTimer.*               # Cooldowns and projectile movement timing
+|   |       |-- AnimatedSprite.*              # Player, weapon, and bullet animation
+|   |       `-- FrameTimer.*                  # Cooldowns and projectile movement timing
 |   `-- Game/
 |       |-- GameObjects/
-|       |   |-- Player.*                   # Movement, stats, animations, and combat control
-|       |   |-- HUD.*                      # Player and weapon information display
-|       |   `-- Collectibles/              # Health, ammunition, and speed integration
+|       |   |-- Player.*                      # Movement, stats, animations, and combat control
+|       |   |-- HUD.*                         # Player and weapon information display
+|       |   `-- Collectibles/                 # Health, ammunition, and speed integration
 |       |-- Input/
 |       |   `-- KeyboardAndMouseInputDevice.* # Player and weapon input mappings
 |       `-- Weapons/
-|           |-- WeaponBase.*               # Shared ammunition and firing behaviour
-|           |-- BlitzWeapon.*              # Blitz implementation
-|           |-- PistolWeapon.*             # Pistol implementation
-|           `-- Bullet.*                   # Projectile movement and collision behaviour
+|           |-- WeaponBase.*                  # Shared ammunition and firing behaviour
+|           |-- BlitzWeapon.*                 # Blitz implementation
+|           |-- PistolWeapon.*                # Pistol implementation
+|           `-- Bullet.*                      # Projectile movement and collision behaviour
 `-- Assets/sprites/
-    |-- characters/                        # Player animation sprites
-    |-- weapons/                           # Weapon sprites and definitions
-    |-- bullets/                           # Projectile sprites and definitions
-    `-- HUD/                               # Health and weapon display assets
+    |-- characters/                           # Player animation sprites
+    |-- weapons/                              # Weapon sprites and definitions
+    |-- bullets/                              # Projectile sprites and definitions
+    `-- HUD/                                  # Health and weapon display assets
 ```
 
 ## How it works
@@ -114,7 +110,7 @@ SFML 2D Shooter/
 
 The player's weapons derive from `WeaponBase`, which stores clip ammunition, reserve ammunition, clip size, and firing timing. `BlitzWeapon` and `PistolWeapon` supply their own starting ammunition and sprite animation. Switching weapons hides the previous weapon and makes the selected weapon follow the player's position, facing direction, and aim angle. Reloading transfers as much reserve ammunition as possible into the current clip.
 
-Firing creates a `Bullet` in the active gameplay state using the weapon's position, rotation, and horizontal orientation. After its initial muzzle-flash frame, the projectile moves forward using frame delta time. It is removed when its lifetime expires or after hitting a destructible target; a successful combat hit also updates the player's score.
+Firing creates a `Bullet` using the weapon's position, rotation, and horizontal orientation. After its initial muzzle-flash frame, the projectile moves forward using frame delta time. It is removed when its lifetime expires or after hitting a destructible target; a successful combat hit also updates the player's score.
 
 The directly connected systems read or update this player-and-weapon state. Enemy contact reduces player health, collectibles restore health or add ammunition or movement speed, the camera follows the player's position, and the HUD displays the current health, score, weapon, and ammunition values.
 
