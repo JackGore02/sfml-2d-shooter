@@ -21,6 +21,13 @@ x86/
 *.tlog
 *.log
 
+# Bundled SFML dependencies (architecture folders are not build output)
+!/ThirdParty/SFML-2.5.1/lib/x86/
+!/ThirdParty/SFML-2.5.1/lib/x64/
+!/ThirdParty/SFML-2.5.1/bin/x86/
+!/ThirdParty/SFML-2.5.1/bin/x64/
+!/SFML 2D Shooter/Assets/x64/
+
 # Operating-system and editor files
 .DS_Store
 Thumbs.db
